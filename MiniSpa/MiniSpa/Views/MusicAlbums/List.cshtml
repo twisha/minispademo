@@ -1,0 +1,29 @@
+﻿<h3>Music Albums</h3>
+<form class="form-inline" role="form" data-ng-submit="search()">
+    <div class="form-group">
+        <label for="Genre">Genres</label>
+        <select name="Genre" data-ng-model="genreId" class="form-control" data-ng-options="genre.Key as genre.Value for genre in genres">
+            <option value=""></option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<table class="table table-striped table-bordered table-condensed mini-spa-grid" data-ng-table="tableParams" data-show-filter="true" data-template-pagination="custom/pager">
+    <tr data-ng-repeat="album in $data">
+        <td class="mini-spa-grid-viewedit-col" data-title="'#'">
+            <div class="btn-group">
+                <a href="#/Detail/{{album.Id}}" class="btn btn-default btn-xs" title="View">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                </a>
+                <a href="#/Edit/{{album.Id}}" class="btn btn-default btn-xs" title="Edit">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
+            </div>
+        </td>
+        <td data-title="'Title'" data-sortable="'Title'" data-filter="{ 'Title': 'text' }">{{album.Title}}</td>
+        <td data-title="'Artist'" data-sortable="'Artist'" data-filter="{ 'Artist': 'text' }">{{album.Artist.Value}}</td>
+        <td data-title="'Price'" data-sortable="'Price'">{{album.Price}}</td>
+        <td data-title="'Genre'" data-sortable="'Genre'">{{album.Genre.Value}}</td>
+    </tr>
+</table>
+@Html.Partial("Pager")

@@ -1,0 +1,53 @@
+﻿<div class="row">
+    <div class="col-sm-1">
+        <button type="button" class="btn btn-default btn-sm" data-ng-click="navigateToList()">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+        </button>
+    </div>
+    <div class="col-sm-11">
+        <h3>Edit Music Album</h3>
+    </div>
+</div>
+<div class="alert alert-success alert-dismissable" data-ng-show="saveSuccess === true">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    Your changes have been saved successfully.
+</div>
+<div class="alert alert-danger alert-dismissable" data-ng-show="saveSuccess === false">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    Unknown error occurred while processing your request. Please try again.
+</div>
+<form class="form-horizontal" role="form" data-ng-submit="saveAlbum()">
+    <div class="form-group">
+        <label for="txtAlbumTitle" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" id="txtAlbumTitle" data-ng-model="album.Title" required class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="txtAlbumPrice" class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-10">
+            <input type="text" id="txtAlbumPrice" data-ng-model="album.Price" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Genre" class="col-sm-2 control-label">Genre</label>
+        <div class="col-sm-10">
+            <select name="Genre" data-ng-model="album.Genre.Key" class="form-control" data-ng-options="genre.Key as genre.Value for genre in genres">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Artist" class="col-sm-2 control-label">Artist</label>
+        <div class="col-sm-10">
+            <select name="Artist" data-ng-model="album.Artist.Key" class="form-control" data-ng-options="artist.Key as artist.Value for artist in artists">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>

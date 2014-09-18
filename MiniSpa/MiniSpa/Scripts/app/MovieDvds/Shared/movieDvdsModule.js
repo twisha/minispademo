@@ -1,0 +1,1 @@
+﻿angular.module("movieDvdsApp", ['ngRoute', 'ngTable']);

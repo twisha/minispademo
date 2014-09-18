@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="235bf438fb6d49e4bd03c3cef44188d7" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreModel.Album" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Artist" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Genre" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.MovieDvd" Width="1.5" PointX="5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.MovieGenre" Width="1.5" PointX="2.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="StoreModel.Album_Artist" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Genre_Albums" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.MovieGenre_MovieDvd" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

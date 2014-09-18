@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/ngtable")
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/app")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/ngtable")
+    @Scripts.Render("~/bundles/app")
+    <script>
+        miniSpaApp.rootUrl = "@Url.Content("~/")";
+    </script>
+    @RenderSection("HeadContent", false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">Why Mini-SPA?</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@(ViewBag.ActiveModule == "Music" ? "active" : "")"><a href="@Url.Action("Index", "MusicAlbums")">Music</a></li>
+                    <li class="@(ViewBag.ActiveModule == "Movies" ? "active" : "")"><a href="@Url.Action("Index", "MovieDvds")">Movies</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>

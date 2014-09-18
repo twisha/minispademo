@@ -1,0 +1,16 @@
+﻿body {
+    min-height: 2000px;
+    padding-top: 60px;
+}
+
+.mini-spa-grid {
+    margin: 10px 0;
+}
+
+.mini-spa-grid-viewedit-col {
+    -moz-min-width: 60px;
+    -ms-min-width: 60px;
+    -o-min-width: 60px;
+    -webkit-min-width: 60px;
+    min-width: 60px;
+}

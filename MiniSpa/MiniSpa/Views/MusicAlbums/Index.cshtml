@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Music";
+    ViewBag.ActiveModule = "Music";
+}
+@section HeadContent
+{
+    @Scripts.Render("~/bundles/angularMusicAlbums")
+}
+<div data-ng-app="musicAlbumsApp" data-ng-view="" data-ng-cloak="">
+</div>
+
